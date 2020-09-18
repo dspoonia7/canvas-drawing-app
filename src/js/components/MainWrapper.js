@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
+
 import DrawingTools from './DrawingTools';
 import DrawingBoard from './DrawingBoard';
-
 import { convertHexToRGBA } from '../utils/CoreUtils';
 
-function MainContainer() {
+function MainWrapper() {
   const [tool, setTool] = useState('pen');
   const [strokeWidth, setStrokeWidth] = useState(5);
   const [highlighterStrokeWidth] = useState(5);
   const [color, setColor] = useState('#ff0000');
   const [resetBoard, setResetBoard] = useState(false);
 
-  console.log('render', tool, strokeWidth, color);
+  console.log('MainWrapper', tool, strokeWidth, color);
 
   return (
     <div className='main-wrapper'>
@@ -38,4 +38,4 @@ function MainContainer() {
   );
 }
 
-export default MainContainer;
+export default MainWrapper;
