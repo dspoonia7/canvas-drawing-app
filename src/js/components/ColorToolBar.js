@@ -16,6 +16,7 @@ export default function ColorToolBar(props) {
         >
           <div className='color-select'>
             <ImPencil2 style={{ color: colorOption }} />
+            <div className='tooltip'>Color</div>
           </div>
         </div>
       ))}

@@ -62,6 +62,7 @@ function DrawingTools(props) {
                 onClick={() => handleSelectTool(toolItem)}
               >
                 {toolItem.icon}
+                <div className='tooltip'>{toolItem.name}</div>
               </div>
             ))}
           </div>
@@ -91,6 +92,7 @@ function DrawingTools(props) {
       <div className='actions'>
         <div className='tool' onClick={handleResetBoard}>
           <GrPowerReset />
+          <div className='tooltip'>Reset Board</div>
         </div>
       </div>
     </div>

@@ -16,7 +16,9 @@ export default function StrokeWidthToolBar(props) {
           <div
             className='stroke-select'
             style={{ width: 2 * widthOption, height: 2 * widthOption }}
-          ></div>
+          >
+            <div className='tooltip'>Pen Thickness</div>
+          </div>
         </div>
       ))}
     </>
