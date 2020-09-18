@@ -46,34 +46,41 @@ function DrawingTools(props) {
   console.log('DrawingTools', showSubTools);
 
   return (
-    <div className='drawing-tools'>
-      <div>
-        <div className='tools'>
-          {tools.map((toolItem) => (
-            <div
-              key={toolItem.id}
-              className={`tool ${tool === toolItem.id && 'selected'}`}
-              onClick={() => handleSelectTool(toolItem)}
-            >
-              {toolItem.icon}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div>
-        {showSubTools && (
-          <div className='sub-toolbar'>
-            {(tool === 'pen' || tool === 'eraser') && (
-              <StrokeWidthToolBar
-                strokeWidth={strokeWidth}
-                handleStrokeWidthSelect={handleStrokeWidthSelect}
-              />
-            )}
-
-            <ColorToolBar color={color} handleColorSelect={handleColorSelect} />
+    <div className='drawing-tools-wrapper'>
+      <div className='drawing-tools'>
+        <div>
+          <div className='tools'>
+            {tools.map((toolItem) => (
+              <div
+                key={toolItem.id}
+                className={`tool ${tool === toolItem.id && 'selected'}`}
+                onClick={() => handleSelectTool(toolItem)}
+              >
+                {toolItem.icon}
+              </div>
+            ))}
           </div>
-        )}
+        </div>
+
+        <div>
+          {showSubTools && (
+            <div className='sub-toolbar'>
+              {(tool === 'pen' || tool === 'eraser') && (
+                <StrokeWidthToolBar
+                  strokeWidth={strokeWidth}
+                  handleStrokeWidthSelect={handleStrokeWidthSelect}
+                />
+              )}
+
+              {(tool === 'pen' || tool === 'highlighter') && (
+                <ColorToolBar
+                  color={color}
+                  handleColorSelect={handleColorSelect}
+                />
+              )}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

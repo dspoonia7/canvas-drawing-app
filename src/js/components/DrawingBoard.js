@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Stage, Layer, Line, Text } from 'react-konva';
 
 export default function DrawingBoard(props) {
-  const { tool, strokeWidth, color, highlighterStrokeWidth } = props;
+  const { tool, strokeWidth, highlighterStrokeWidth, color } = props;
 
   const [lines, setLines] = useState([]);
   const isDrawing = useRef(false);
@@ -10,7 +10,7 @@ export default function DrawingBoard(props) {
   const handleMouseDown = (e) => {
     isDrawing.current = true;
     const pos = e.target.getStage().getPointerPosition();
-    setLines([...lines, { tool, points: [pos.x, pos.y] }]);
+    setLines([...lines, { tool, color, strokeWidth, points: [pos.x, pos.y] }]);
   };
 
   const handleMouseMove = (e) => {
@@ -43,13 +43,13 @@ export default function DrawingBoard(props) {
         onMouseup={handleMouseUp}
       >
         <Layer>
-          <Text text='Just start drawing' x={60} y={30} />
+          <Text text='Just start drawing' x={150} y={30} />
           {lines.map((line, i) => (
             <Line
               key={i}
               points={line.points}
-              stroke={color}
-              strokeWidth={strokeWidth}
+              stroke={line.current ? color : line.color}
+              strokeWidth={line.current ? strokeWidth : line.strokeWidth}
               tension={0.5}
               lineCap='round'
               globalCompositeOperation={

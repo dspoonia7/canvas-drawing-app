@@ -332,10 +332,15 @@ code {
   flex: 1;
   max-width: 100%;
   display: flex; }
+  .main-wrapper .drawing-tools-wrapper {
+    position: absolute;
+    background: #fff;
+    opacity: 0.9;
+    z-index: 99;
+    margin-top: 2.5em; }
   .main-wrapper .drawing-tools {
     display: flex;
-    margin: 0.25em;
-    margin-top: 2em; }
+    margin: 0.25em; }
     .main-wrapper .drawing-tools .tools,
     .main-wrapper .drawing-tools .sub-toolbar {
       border: 1px solid #ccd0f1;

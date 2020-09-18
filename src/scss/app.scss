@@ -35,10 +35,17 @@ code {
   max-width: 100%;
   display: flex;
 
+  .drawing-tools-wrapper {
+    position: absolute;
+    background: #fff;
+    opacity: 0.9;
+    z-index: 99;
+    margin-top: 2.5em;
+  }
+
   .drawing-tools {
     display: flex;
     margin: 0.25em;
-    margin-top: 2em;
 
     .tools,
     .sub-toolbar {

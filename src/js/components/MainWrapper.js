@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import DrawingTools from './DrawingTools';
 import DrawingBoard from './DrawingBoard';
 
+import { convertHexToRGBA } from '../utils/CoreUtils';
+
 function MainContainer() {
   const [tool, setTool] = useState('pen');
   const [strokeWidth, setStrokeWidth] = useState(5);
@@ -20,12 +22,13 @@ function MainContainer() {
         color={color}
         setColor={setColor}
       />
+
       <DrawingBoard
         tool={tool}
         strokeWidth={
           tool === 'highlighter' ? highlighterStrokeWidth : strokeWidth
         }
-        color={color}
+        color={tool === 'highlighter' ? convertHexToRGBA(color, 50) : color}
       />
     </div>
   );

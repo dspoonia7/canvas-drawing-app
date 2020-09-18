@@ -1,12 +1,12 @@
 import React from 'react';
 
-import MainWrapper from './MainWrapper';
+import MainWrapper from './components/MainWrapper';
 
 function App() {
   return (
     <div className='app'>
       <header className='app-header'>
-        <h1>Canvas drawing board app</h1>
+        <h1>Canvas Drawing Board</h1>
       </header>
       <MainWrapper />
     </div>
