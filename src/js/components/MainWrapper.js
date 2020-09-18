@@ -9,6 +9,7 @@ function MainContainer() {
   const [strokeWidth, setStrokeWidth] = useState(5);
   const [highlighterStrokeWidth] = useState(5);
   const [color, setColor] = useState('#ff0000');
+  const [resetBoard, setResetBoard] = useState(false);
 
   console.log('render', tool, strokeWidth, color);
 
@@ -21,6 +22,7 @@ function MainContainer() {
         setStrokeWidth={setStrokeWidth}
         color={color}
         setColor={setColor}
+        handleResetBoard={setResetBoard}
       />
 
       <DrawingBoard
@@ -29,6 +31,8 @@ function MainContainer() {
           tool === 'highlighter' ? highlighterStrokeWidth : strokeWidth
         }
         color={tool === 'highlighter' ? convertHexToRGBA(color, 50) : color}
+        handleResetBoard={setResetBoard}
+        resetBoard={resetBoard}
       />
     </div>
   );

@@ -30,10 +30,10 @@ code {
     background: #fff;
     opacity: 0.9;
     z-index: 99;
-    margin-top: 2.5em; }
+    margin-top: 2.5em;
+    margin-left: 0.5em; }
   .main-wrapper .drawing-tools {
-    display: flex;
-    margin: 0.25em; }
+    display: flex; }
     .main-wrapper .drawing-tools .tools,
     .main-wrapper .drawing-tools .sub-toolbar {
       border: 1px solid #ccd0f1;
@@ -44,7 +44,8 @@ code {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 1.25em 0.8em; }
+        padding: 1.25em 0.8em;
+        cursor: pointer; }
         .main-wrapper .drawing-tools .tools .tool:first-child,
         .main-wrapper .drawing-tools .sub-toolbar .tool:first-child {
           border-top-left-radius: 5px;
@@ -92,3 +93,24 @@ code {
           border-color: #404eca; }
           .main-wrapper .drawing-tools .sub-toolbar .tool.selected:hover {
             background-color: #e4e6f8; }
+  .main-wrapper .actions {
+    position: fixed;
+    bottom: 10px;
+    border: 1px solid #ccd0f1;
+    border-radius: 5px; }
+    .main-wrapper .actions .tool {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25em 0.8em;
+      cursor: pointer; }
+      .main-wrapper .actions .tool svg {
+        width: 1.5em;
+        height: 1.5em;
+        vertical-align: middle;
+        color: #293495; }
+      .main-wrapper .actions .tool:hover {
+        background-color: #e4e6f8; }
+        .main-wrapper .actions .tool:hover svg {
+          color: #404eca; }

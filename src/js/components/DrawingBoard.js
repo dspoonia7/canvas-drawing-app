@@ -1,11 +1,18 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Stage, Layer, Line, Text } from 'react-konva';
 
 export default function DrawingBoard(props) {
-  const { tool, strokeWidth, color } = props;
+  const { tool, strokeWidth, color, resetBoard, handleResetBoard } = props;
 
   const [lines, setLines] = useState([]);
   const isDrawing = useRef(false);
+
+  useEffect(() => {
+    if (resetBoard) {
+      setLines([]);
+      handleResetBoard(false);
+    }
+  }, [resetBoard]);
 
   const handleMouseDown = (e) => {
     isDrawing.current = true;
@@ -49,7 +56,7 @@ export default function DrawingBoard(props) {
         onMouseup={handleMouseUp}
       >
         <Layer>
-          <Text text='Just start drawing' x={150} y={30} />
+          {/* <Text text='Just start drawing' x={150} y={30} /> */}
           {lines.map((line, i) => (
             <Line
               key={i}

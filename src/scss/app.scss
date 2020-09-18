@@ -41,11 +41,11 @@ code {
     opacity: 0.9;
     z-index: 99;
     margin-top: 2.5em;
+    margin-left: 0.5em;
   }
 
   .drawing-tools {
     display: flex;
-    margin: 0.25em;
 
     .tools,
     .sub-toolbar {
@@ -58,6 +58,7 @@ code {
         align-items: center;
         justify-content: center;
         padding: 1.25em 0.8em;
+        cursor: pointer;
 
         &:first-child {
           border-top-left-radius: 5px;
@@ -121,6 +122,37 @@ code {
           &:hover {
             background-color: lighten($theme-color, 66%);
           }
+        }
+      }
+    }
+  }
+
+  .actions {
+    position: fixed;
+    bottom: 10px;
+    border: 1px solid #ccd0f1;
+    border-radius: 5px;
+
+    .tool {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25em 0.8em;
+      cursor: pointer;
+
+      svg {
+        width: 1.5em;
+        height: 1.5em;
+        vertical-align: middle;
+        color: lighten($theme-color, 10%);
+      }
+
+      &:hover {
+        background-color: lighten($theme-color, 66%);
+
+        svg {
+          color: lighten($theme-color, 25%);
         }
       }
     }

@@ -1,11 +1,20 @@
 import React, { useState } from 'react';
 import { FaPen, FaHighlighter, FaEraser } from 'react-icons/fa';
+import { GrPowerReset } from 'react-icons/gr';
 
 import StrokeWidthToolBar from './StrokeWidthToolBar';
 import ColorToolBar from './ColorToolBar';
 
 function DrawingTools(props) {
-  const { tool, setTool, strokeWidth, setStrokeWidth, color, setColor } = props;
+  const {
+    tool,
+    setTool,
+    strokeWidth,
+    setStrokeWidth,
+    color,
+    setColor,
+    handleResetBoard
+  } = props;
 
   const [tools] = useState([
     {
@@ -76,6 +85,12 @@ function DrawingTools(props) {
               )}
             </div>
           )}
+        </div>
+      </div>
+
+      <div className='actions'>
+        <div className='tool' onClick={handleResetBoard}>
+          <GrPowerReset />
         </div>
       </div>
     </div>
