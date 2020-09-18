@@ -14,7 +14,8 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  background-color: #fff; }
 
 .app-header {
   width: 100%;
@@ -22,4 +23,67 @@ code {
 
 .main-wrapper {
   flex: 1;
-  width: 80%; }
+  max-width: 100%;
+  display: flex; }
+  .main-wrapper .drawing-tools {
+    display: flex;
+    margin: 0.25em;
+    margin-top: 2em; }
+    .main-wrapper .drawing-tools .tools,
+    .main-wrapper .drawing-tools .sub-toolbar {
+      border: 1px solid #ccd0f1;
+      border-radius: 5px; }
+      .main-wrapper .drawing-tools .tools .tool,
+      .main-wrapper .drawing-tools .sub-toolbar .tool {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.25em 0.8em; }
+        .main-wrapper .drawing-tools .tools .tool:first-child,
+        .main-wrapper .drawing-tools .sub-toolbar .tool:first-child {
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px; }
+        .main-wrapper .drawing-tools .tools .tool:last-child,
+        .main-wrapper .drawing-tools .sub-toolbar .tool:last-child {
+          border-bottom-left-radius: 5px;
+          border-bottom-right-radius: 5px; }
+        .main-wrapper .drawing-tools .tools .tool .stroke-select,
+        .main-wrapper .drawing-tools .sub-toolbar .tool .stroke-select {
+          background: #333;
+          width: 2px;
+          height: 2px;
+          border-radius: 50%; }
+        .main-wrapper .drawing-tools .tools .tool svg,
+        .main-wrapper .drawing-tools .sub-toolbar .tool svg {
+          width: 1.5em;
+          height: 1.5em;
+          vertical-align: middle;
+          color: #a4abe6; }
+        .main-wrapper .drawing-tools .tools .tool:hover,
+        .main-wrapper .drawing-tools .sub-toolbar .tool:hover {
+          background-color: #e4e6f8; }
+          .main-wrapper .drawing-tools .tools .tool:hover svg,
+          .main-wrapper .drawing-tools .sub-toolbar .tool:hover svg {
+            color: #404eca; }
+        .main-wrapper .drawing-tools .tools .tool.selected,
+        .main-wrapper .drawing-tools .sub-toolbar .tool.selected {
+          background-color: #404eca; }
+          .main-wrapper .drawing-tools .tools .tool.selected svg,
+          .main-wrapper .drawing-tools .sub-toolbar .tool.selected svg {
+            color: white; }
+          .main-wrapper .drawing-tools .tools .tool.selected:hover,
+          .main-wrapper .drawing-tools .sub-toolbar .tool.selected:hover {
+            background-color: #293495; }
+    .main-wrapper .drawing-tools .sub-toolbar {
+      margin-left: 5px;
+      left: 56px;
+      border: 1px solid #ccd0f1;
+      border-radius: 4px; }
+      .main-wrapper .drawing-tools .sub-toolbar .tool {
+        border: 3px solid transparent; }
+        .main-wrapper .drawing-tools .sub-toolbar .tool.selected {
+          background-color: transparent;
+          border-color: #404eca; }
+          .main-wrapper .drawing-tools .sub-toolbar .tool.selected:hover {
+            background-color: #e4e6f8; }
