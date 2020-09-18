@@ -29,12 +29,10 @@ function DrawingTools(props) {
 
   const handleStrokeWidthSelect = (width) => {
     setStrokeWidth(width);
-    // setShowSubTools(false);
   };
 
   const handleColorSelect = (color) => {
     setColor(color);
-    // setShowSubTools(false);
   };
 
   const handleSelectTool = (toolItem) => {
@@ -42,8 +40,6 @@ function DrawingTools(props) {
 
     setTool(toolItem.id);
   };
-
-  console.log('DrawingTools', showSubTools);
 
   return (
     <div className='drawing-tools-wrapper'>

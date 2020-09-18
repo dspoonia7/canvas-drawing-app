@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Stage, Layer, Line, Text } from 'react-konva';
 
 export default function DrawingBoard(props) {
-  const { tool, strokeWidth, highlighterStrokeWidth, color } = props;
+  const { tool, strokeWidth, color } = props;
 
   const [lines, setLines] = useState([]);
   const isDrawing = useRef(false);
@@ -10,7 +10,13 @@ export default function DrawingBoard(props) {
   const handleMouseDown = (e) => {
     isDrawing.current = true;
     const pos = e.target.getStage().getPointerPosition();
-    setLines([...lines, { tool, color, strokeWidth, points: [pos.x, pos.y] }]);
+
+    const filteredLines = lines.filter((line) => line.tool !== 'highlighter');
+
+    setLines([
+      ...filteredLines,
+      { tool, color, strokeWidth, points: [pos.x, pos.y] }
+    ]);
   };
 
   const handleMouseMove = (e) => {
