@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/canvas-drawing-app/static/css/main.13dde9c4.chunk.css",
+    "main.js": "/canvas-drawing-app/static/js/main.a2e9982a.chunk.js",
+    "main.js.map": "/canvas-drawing-app/static/js/main.a2e9982a.chunk.js.map",
+    "runtime-main.js": "/canvas-drawing-app/static/js/runtime-main.77f5eee3.js",
+    "runtime-main.js.map": "/canvas-drawing-app/static/js/runtime-main.77f5eee3.js.map",
+    "static/js/2.448c7fdb.chunk.js": "/canvas-drawing-app/static/js/2.448c7fdb.chunk.js",
+    "static/js/2.448c7fdb.chunk.js.map": "/canvas-drawing-app/static/js/2.448c7fdb.chunk.js.map",
+    "index.html": "/canvas-drawing-app/index.html",
+    "precache-manifest.3416ee97c413262473812797ac431f1a.js": "/canvas-drawing-app/precache-manifest.3416ee97c413262473812797ac431f1a.js",
+    "service-worker.js": "/canvas-drawing-app/service-worker.js",
+    "static/css/main.13dde9c4.chunk.css.map": "/canvas-drawing-app/static/css/main.13dde9c4.chunk.css.map",
+    "static/js/2.448c7fdb.chunk.js.LICENSE.txt": "/canvas-drawing-app/static/js/2.448c7fdb.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.77f5eee3.js",
+    "static/js/2.448c7fdb.chunk.js",
+    "static/css/main.13dde9c4.chunk.css",
+    "static/js/main.a2e9982a.chunk.js"
+  ]
+}
